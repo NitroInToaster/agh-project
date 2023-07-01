@@ -43,4 +43,6 @@ async def delete_customer(customer_id: int) -> None:
 
 @router.post("/")
 async def create_customer(customer: CustomerCreateSchema) -> Customer:
-   pass
+    index = len(CUSTOMERS_STORAGE)
+    CUSTOMERS_STORAGE[index] = Customer(id=index, **customer.dict())
+    return CUSTOMERS_STORAGE[index]
