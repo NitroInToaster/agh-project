@@ -78,6 +78,7 @@
 }
 
 .addCustomer {
+  align-items: center;
   display: flex;
   padding: 40px;
   flex-direction: column;
@@ -85,7 +86,10 @@
 .addCustomer input {
   border-width: 2px;
   border-radius: 10px;
-  width: 500px;
+  width: 400px;
+  margin-bottom: 10px;
+  text-align: center;
+  height: 40px;
 }
 
 .addCustomer button {
@@ -93,4 +97,69 @@
   height: 50px;
   border-width: 2px;
   border-radius: 10px;
+}
+
+.customersList {
+  padding: 10px;
+  align-self: center;
+}
+
+.customersList li {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  border-width: 2px;
+  border-radius: 10px;
+  text-align: center;
+  width: 500px;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.customersList ul {
+  padding: 10px;
+}
+
+.ordersList {
+  padding: 10px;
+  align-self: center;
+}
+
+.ordersList li {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  border-width: 2px;
+  border-radius: 10px;
+  text-align: center;
+  width: 500px;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.ordersList ul {
+  padding: 10px;
+}
+
+.productsList {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  align-self: center;
+}
+
+.productsList li {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  border-width: 2px;
+  border-radius: 10px;
+  text-align: center;
+  width: 500px;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.productsList ul {
+  padding: 10px;
 }

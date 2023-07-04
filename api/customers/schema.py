@@ -37,41 +37,20 @@ class CustomerUpdateSchema(BaseModel):
 class Customer(CustomerCreateSchema):
     id: int
 
+class OrderCreateSchema(BaseModel):
+    customer_id: int
+    order_items: list[int]
 
 
-# class StudentCreateSchema(BaseModel):
-#     first_name: str
-#     last_name: str
-
-#     class Config:
-#         schema_extra = {
-#             "example": {
-#                 "first_name": "Zbyszek",
-#                 "last_name": "Kieliszek",
-#             }
-#         }
+class Order(OrderCreateSchema):
+    order_id: int
 
 
-# class StudentUpdateSchema(BaseModel):
-#     first_name: str | None
-#     last_name: str | None
-
-#     class Config:
-#         schema_extra = {
-#             "example": {
-#                 "first_name": "Zbysiu",
-#             }
-#         }
+class ProductCreateSchema(BaseModel):
+    name: str
+    price: float
+    description: str
 
 
-# class Student(StudentCreateSchema):
-#     id: int
-
-
-# class Mark(float, Enum):
-#     BARDZO_DOBRY = 5.0
-#     DOBRY_PLUS = 4.5
-#     DOBRY = 4.0
-#     DOSTATECZNY_PLUS = 3.5
-#     DOSTATECZNY = 3.0
-#     NIEDOSTATECZNY = 2.0
+class Product(ProductCreateSchema):
+    id: int

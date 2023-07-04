@@ -1,7 +1,9 @@
 import { MainNav } from "@/components/MainNav";
-import { navigationLinks } from "../config/navigationLinks";
-import { UserNav } from "./CustomersPage/components/UserNav";
+import { navigationLinks } from "../../config/navigationLinks";
+import { UserNav } from "../CustomersPage/components/UserNav";
 import { useState } from "react";
+import useAlert from "./components/useAlert";
+import { AlertProvider } from "./components/AuthContext";
 
 export const AddCustomerPage = () => {
   
@@ -36,15 +38,7 @@ export const AddCustomerPage = () => {
     };
     console.log(customer);
 
-    // const response = fetch("Access-Control-Allow-Origin: http://127.0.0.1:8000/customers", {
-    //   method: "POST",
-    //   body: JSON.stringify(customer),
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    // });
-
-    const response = await fetch("http://127.0.0.1:8000/customers", {
+    const response = await fetch("http://127.0.0.1:8000/customers/", {
       method: "POST",
       body: JSON.stringify(customer),
       headers: {
@@ -55,8 +49,6 @@ export const AddCustomerPage = () => {
     console.log(response);
   };
 
-
-  
 
 
 
@@ -77,14 +69,14 @@ export const AddCustomerPage = () => {
         <div className="hidden h-full flex-1 flex-col space-y-8 md:flex"></div>
       </div>
       <form onSubmit={submitFormHandler} className="addCustomer">
-        <label>name</label>
-        <input onChange={getName} value={name} type="text"></input>
-        <label>surname</label>
-        <input onChange={getSurname} value={surname} type="text"></input>
-        <label>email</label>
-        <input onChange={getEmail} value={email} type="text"></input>
-        <label>phone number</label>
-        <input onChange={getPhoneNumber} value={phoneNumber} type="text"></input>
+        <label>Name</label>
+        <input onChange={getName} value={name} type="text" placeholder="Name"></input>
+        <label>Surname</label>
+        <input onChange={getSurname} value={surname} type="text" placeholder="Surname"></input>
+        <label>Email</label>
+        <input onChange={getEmail} value={email} type="text" placeholder="Email"></input>
+        <label>Phone number</label>
+        <input onChange={getPhoneNumber} value={phoneNumber} type="text" placeholder="Phone number"></input>
         <button type="submit">Submit</button>
       </form>
     </div>
